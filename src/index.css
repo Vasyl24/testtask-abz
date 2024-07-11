@@ -11,6 +11,10 @@
   --secondary-color: #00bdd3;
   --background-color: #f8f8f8;
   --text-color: #000000de;
+  --secondary-text-color: #ffffff;
+  --input-text-color: #7e7e7e;
+  --grey: #d0cfcf;
+  --dark-grey: #B4B4B4;
 }
 
 *,
@@ -65,4 +69,5 @@ button {
 
 input {
   font-family: inherit;
+  outline: none;
 }
