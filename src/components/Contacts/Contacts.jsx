@@ -11,7 +11,7 @@ import icon from '../../assets/icons/sprite.svg';
 
 const Contacts = () => {
   return (
-    <ContactSection>
+    <ContactSection id='users'>
       <ContactTitle>Working with GET request</ContactTitle>
       <ContactList>
         <ContactItem>

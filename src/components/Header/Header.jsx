@@ -15,10 +15,10 @@ const Header = () => {
 
       <ButtonList>
         <li>
-          <HeaderButton>Users</HeaderButton>
+          <HeaderButton href="#users">Users</HeaderButton>
         </li>
         <li>
-          <HeaderButton>Sign up</HeaderButton>
+          <HeaderButton href="#signup">Sign up</HeaderButton>
         </li>
       </ButtonList>
     </HeaderContainer>

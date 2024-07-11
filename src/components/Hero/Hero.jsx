@@ -14,7 +14,7 @@ const Hero = () => {
         Development keeps evolving.
       </HeroText>
 
-      <RegisterBtn>Sign up</RegisterBtn>
+      <RegisterBtn href='#signup'>Sign up</RegisterBtn>
     </HeroSection>
   );
 };

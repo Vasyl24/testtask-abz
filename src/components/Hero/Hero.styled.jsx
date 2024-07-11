@@ -6,7 +6,12 @@ export const HeroSection = styled.section`
   height: 500px;
   padding: 40px 16px 70px;
 
-  background-image: url(${image});
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(${image});
   background-color: var(--secondary-color);
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,6 +23,7 @@ export const HeroSection = styled.section`
   }
 
   @media screen and (min-width: 1024px) {
+    width: 1170px;
     height: 650px;
 
     padding: 164px 16px 164px;
@@ -56,9 +62,10 @@ export const HeroText = styled.p`
   }
 `;
 
-export const RegisterBtn = styled.button`
+export const RegisterBtn = styled.a`
   width: 100px;
   height: 34px;
+  padding: 4px 22px;
 
   color: var(--text-color);
   text-align: center;

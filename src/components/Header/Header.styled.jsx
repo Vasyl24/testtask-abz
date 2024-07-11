@@ -35,7 +35,10 @@ export const ButtonList = styled.ul`
   gap: 10px;
 `;
 
-export const HeaderButton = styled.button`
+export const HeaderButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100px;
   height: 34px;
 

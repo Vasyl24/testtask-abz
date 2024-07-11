@@ -14,7 +14,7 @@
   --secondary-text-color: #ffffff;
   --input-text-color: #7e7e7e;
   --grey: #d0cfcf;
-  --dark-grey: #B4B4B4;
+  --dark-grey: #b4b4b4;
 }
 
 *,
@@ -28,6 +28,10 @@ body {
   color: var(--text-color);
   font-family: 'Nunito', sans-serif;
   background-color: var(--background-color);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1,

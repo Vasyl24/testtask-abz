@@ -18,7 +18,7 @@ import {
 
 const Form = () => {
   return (
-    <FormSection>
+    <FormSection id="signup">
       <FormTitle>Working with POST request</FormTitle>
 
       <FormBlock action="" autoComplete="on">
