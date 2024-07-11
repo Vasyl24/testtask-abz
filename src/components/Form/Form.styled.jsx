@@ -15,6 +15,14 @@ export const FormTitle = styled.h2`
   line-height: calc (40/40);
 `;
 
+export const FormBlock = styled.form`
+  @media screen and (min-width: 768px) {
+    width: 380px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+`;
+
 export const ContactInputList = styled.ul`
   margin-bottom: 25px;
 `;

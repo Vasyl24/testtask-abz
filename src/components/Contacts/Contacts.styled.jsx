@@ -16,6 +16,17 @@ export const ContactTitle = styled.h2`
 
 export const ContactList = styled.ul`
   margin-bottom: 50px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    gap: 29px;
+  }
 `;
 
 export const ContactItem = styled.li`
@@ -23,8 +34,22 @@ export const ContactItem = styled.li`
   border-radius: 10px;
   background: #fff;
 
-  &:not(:last-child) {
-    margin-bottom: 20px;
+  @media screen and (max-width: 767.98px) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 344px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 282px;
+  }
+
+  @media screen and (min-width: 1170px) {
+    width: 370px;
   }
 `;
 

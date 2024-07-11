@@ -6,14 +6,11 @@ export const Container = styled.div`
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
-    width: 704px;
     padding-right: 32px;
     padding-left: 32px;
   }
 
   @media screen and (min-width: 1024px) {
-    width: 904px;
-
     padding-right: 60px;
     padding-left: 60px;
   }
@@ -21,6 +18,7 @@ export const Container = styled.div`
   @media screen and (min-width: 1170px) {
     width: 1170px;
     padding: 0;
+
     /* padding-right: 60px;
     padding-left: 60px; */
   }

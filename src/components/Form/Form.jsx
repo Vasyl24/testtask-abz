@@ -3,6 +3,7 @@ import {
   ContactInput,
   ContactInputItem,
   ContactInputList,
+  FormBlock,
   FormSection,
   FormTitle,
   PhotoInput,
@@ -20,7 +21,7 @@ const Form = () => {
     <FormSection>
       <FormTitle>Working with POST request</FormTitle>
 
-      <form action="" autoComplete="on">
+      <FormBlock action="" autoComplete="on">
         <ContactInputList>
           <ContactInputItem>
             <ContactInput type="text" placeholder="Your name" />
@@ -64,7 +65,7 @@ const Form = () => {
         <PhotoInput type="file" id="file" />
 
         <BtnSubmit type="submit">Sign up</BtnSubmit>
-      </form>
+      </FormBlock>
     </FormSection>
   );
 };

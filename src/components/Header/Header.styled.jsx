@@ -7,6 +7,16 @@ export const HeaderContainer = styled.header`
   gap: 14px;
   padding: 16px 13px;
 
+  @media screen and (min-width: 768px) {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
   @media screen and (min-width: 1170px) {
     width: 1170px;
     margin: 0 auto;
