@@ -14,7 +14,8 @@
   --secondary-text-color: #ffffff;
   --input-text-color: #7e7e7e;
   --grey: #d0cfcf;
-  --dark-grey: #b4b4b4;
+  --disabled-btn: #b4b4b4;
+  --hover-btn: #ffe302;
 }
 
 *,

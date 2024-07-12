@@ -3,6 +3,7 @@ import {
   ContactInput,
   ContactInputItem,
   ContactInputList,
+  ContactLabel,
   FormBlock,
   FormSection,
   FormTitle,
@@ -24,15 +25,18 @@ const Form = () => {
       <FormBlock action="" autoComplete="on">
         <ContactInputList>
           <ContactInputItem>
-            <ContactInput type="text" placeholder="Your name" />
+            <ContactInput type="text" id="name" placeholder="" />
+            <ContactLabel htmlFor="name">Your name</ContactLabel>
           </ContactInputItem>
 
           <ContactInputItem>
-            <ContactInput type="email" placeholder="Email" />
+            <ContactInput type="email" id="email" placeholder="" />
+            <ContactLabel htmlFor="email">Email</ContactLabel>
           </ContactInputItem>
 
           <ContactInputItem>
-            <ContactInput type="tel" placeholder="Phone" />
+            <ContactInput type="tel" id="phone" placeholder="" />
+            <ContactLabel htmlFor="phone">Phone</ContactLabel>
 
             <TelExample>+38 (XXX) XXX - XX - XX</TelExample>
           </ContactInputItem>

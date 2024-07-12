@@ -95,5 +95,10 @@ export const ContactButton = styled.button`
   line-height: calc(26 / 16);
 
   border-radius: 80px;
-  background: var(--primary-color);
+  background-color: var(--primary-color);
+  transition: background-color 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75) 0s;
+
+  &:hover {
+    background-color: var(--hover-btn);
+  }
 `;

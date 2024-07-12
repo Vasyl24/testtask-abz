@@ -9,9 +9,11 @@ import {
 const Header = () => {
   return (
     <HeaderContainer>
-      <Logo>
-        <use href={`${icon}#icon-logo`}></use>
-      </Logo>
+      <a href="/#">
+        <Logo>
+          <use href={`${icon}#icon-logo`}></use>
+        </Logo>
+      </a>
 
       <ButtonList>
         <li>

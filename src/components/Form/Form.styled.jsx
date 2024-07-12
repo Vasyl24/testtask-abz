@@ -28,8 +28,18 @@ export const ContactInputList = styled.ul`
 `;
 
 export const ContactInputItem = styled.li`
+  position: relative;
+
   &:not(:last-child) {
     margin-bottom: 50px;
+  }
+
+  & :focus + label,
+  :not(:placeholder-shown) + label {
+    font-size: 12px;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75) 0s,
+      font-size 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75) 0s;
   }
 `;
 
@@ -43,6 +53,22 @@ export const TelExample = styled.span`
   line-height: calc(14 / 12);
 `;
 
+export const ContactLabel = styled.label`
+  position: absolute;
+  padding: 2px 4px;
+  top: 14px;
+  left: 16px;
+
+  color: var(--input-text-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: calc(26 / 16);
+
+  background-color: var(--background-color);
+  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75) 0s,
+    font-size 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75) 0s;
+`;
+
 export const ContactInput = styled.input`
   width: 100%;
   padding-top: 14px;
@@ -50,13 +76,18 @@ export const ContactInput = styled.input`
   padding-left: 16px;
   padding-right: 16px;
 
-  color: var(--input-text-color);
+  color: var(--text-color);
   font-size: 16px;
   font-weight: 400;
   line-height: calc(26 / 16);
 
   border-radius: 4px;
   border: 1px solid var(--grey);
+  background-color: var(--background-color);
+
+  & :focus > label {
+    transform: translateY(-50%);
+  }
 `;
 
 export const PositionText = styled.p`
@@ -73,6 +104,9 @@ export const RadioList = styled.ul`
 `;
 
 export const RadioItem = styled.li`
+  display: flex;
+  align-items: center;
+
   &:not(:last-child) {
     margin-bottom: 7px;
   }
@@ -118,6 +152,7 @@ export const Value = styled.label`
   font-size: 16px;
   font-weight: 400;
   line-height: calc(26 / 16);
+  cursor: pointer;
 `;
 
 export const PhotoInput = styled.input`
@@ -148,6 +183,7 @@ export const PhotoLabel = styled.label`
 
     border-radius: 4px 0px 0px 4px;
     border: 1px solid var(--text-color);
+    cursor: pointer;
   }
 
   & span::after {
@@ -176,6 +212,6 @@ export const BtnSubmit = styled.button`
   font-weight: 400;
   line-height: calc(26 / 16);
 
-  background-color: var(--dark-grey);
+  background-color: var(--disabled-btn);
   border-radius: 80px;
 `;
