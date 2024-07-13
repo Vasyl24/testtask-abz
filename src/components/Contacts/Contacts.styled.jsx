@@ -53,33 +53,31 @@ export const ContactItem = styled.li`
   }
 `;
 
-// export const ContactImg = styled.img`
-// margin-bottom: 20px;
-//   width: 70px;
-//   height: 70px;
-//   border-radius: 70px;
-// `;
-
-export const ContactImg = styled.svg`
-  margin-bottom: 20px;
+export const ContactImg = styled.img`
   margin-right: auto;
   margin-left: auto;
-  display: block;
+  margin-bottom: 20px;
   width: 70px;
   height: 70px;
+  border-radius: 70px;
+`;
+
+export const ContactName = styled.p`
+  margin-bottom: 20px;
+
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: calc(26 / 16);
+  text-align: center;
 `;
 
 export const ContactText = styled.p`
   color: var(--text-color);
-  text-align: center;
-
   font-size: 16px;
   font-weight: 400;
   line-height: calc(26 / 16);
-
-  &:not(:last-child) {
-    margin-bottom: 20px;
-  }
+  text-align: center;
 `;
 
 export const ContactButton = styled.button`

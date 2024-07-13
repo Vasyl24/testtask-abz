@@ -3,84 +3,31 @@ import {
   ContactImg,
   ContactItem,
   ContactList,
+  ContactName,
   ContactSection,
   ContactText,
   ContactTitle,
 } from './Contacts.styled';
-import icon from '../../assets/icons/sprite.svg';
 
-const Contacts = () => {
+const Contacts = ({ users, loadMore }) => {
   return (
-    <ContactSection id='users'>
+    <ContactSection id="users">
       <ContactTitle>Working with GET request</ContactTitle>
       <ContactList>
-        <ContactItem>
-          {/* <ContactImg src="" alt="photo" /> */}
-          <ContactImg>
-            <use href={`${icon}#icon-photo-cover`}></use>
-          </ContactImg>
+        {users.users.map(user => (
+          <ContactItem key={user.id}>
+            <ContactImg src={user.photo} alt={user.name}></ContactImg>
 
-          <ContactText>Salvador Stewart Flynn Thomas Salva...</ContactText>
-          <ContactText>
-            Leading specialist of the department o...
-            JeromeKlarkaJeromeKlarka19233623... +38 (098) 278 76 24
-          </ContactText>
-        </ContactItem>
+            <ContactName>{user.name}</ContactName>
 
-        <ContactItem>
-          {/* <ContactImg src="" alt="photo" /> */}
-          <ContactImg>
-            <use href={`${icon}#icon-photo-cover`}></use>
-          </ContactImg>
-
-          <ContactText>Salvador Stewart Flynn Thomas Salva...</ContactText>
-          <ContactText>
-            Leading specialist of the department o...
-            JeromeKlarkaJeromeKlarka19233623... +38 (098) 278 76 24
-          </ContactText>
-        </ContactItem>
-
-        <ContactItem>
-          {/* <ContactImg src="" alt="photo" /> */}
-          <ContactImg>
-            <use href={`${icon}#icon-photo-cover`}></use>
-          </ContactImg>
-
-          <ContactText>Salvador Stewart Flynn Thomas Salva...</ContactText>
-          <ContactText>
-            Leading specialist of the department o...
-            JeromeKlarkaJeromeKlarka19233623... +38 (098) 278 76 24
-          </ContactText>
-        </ContactItem>
-
-        <ContactItem>
-          {/* <ContactImg src="" alt="photo" /> */}
-          <ContactImg>
-            <use href={`${icon}#icon-photo-cover`}></use>
-          </ContactImg>
-
-          <ContactText>Salvador Stewart Flynn Thomas Salva...</ContactText>
-          <ContactText>
-            Leading specialist of the department o...
-            JeromeKlarkaJeromeKlarka19233623... +38 (098) 278 76 24
-          </ContactText>
-        </ContactItem>
-
-        <ContactItem>
-          {/* <ContactImg src="" alt="photo" /> */}
-          <ContactImg>
-            <use href={`${icon}#icon-photo-cover`}></use>
-          </ContactImg>
-
-          <ContactText>Salvador Stewart Flynn Thomas Salva...</ContactText>
-          <ContactText>
-            Leading specialist of the department o...
-            JeromeKlarkaJeromeKlarka19233623... +38 (098) 278 76 24
-          </ContactText>
-        </ContactItem>
+            <ContactText>{user.position}</ContactText>
+            <ContactText>{user.email}</ContactText>
+            <ContactText>{user.phone}</ContactText>
+          </ContactItem>
+        ))}
       </ContactList>
 
-      <ContactButton>Show more</ContactButton>
+      <ContactButton onClick={loadMore}>Show more</ContactButton>
     </ContactSection>
   );
 };
