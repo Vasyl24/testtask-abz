@@ -3,19 +3,16 @@ import Contacts from './Contacts/Contacts';
 import Header from './Header/Header';
 import Hero from './Hero/Hero';
 import Form from './Form/Form';
-// import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { fetchUsers } from './api';
+import { ColorRing } from 'react-loader-spinner';
 
 export const App = () => {
   const [users, setUsers] = useState([]);
-
-  //  const [imgName, setImgName] = useState(null);
-  // const [images, setImages] = useState([]);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
-  // const [totalHits, setTotalHits] = useState(null);
+  const [totalPages, setTotalPages] = useState(null);
 
   useEffect(() => {
     const abortCtrl = new AbortController();
@@ -26,22 +23,19 @@ export const App = () => {
         setStatus('pending');
         setError(null);
 
-        const fetchedUsers = await fetchUsers(count, abortCtrl, page);
+        const fetchedUsers = await fetchUsers({ count, abortCtrl, page });
 
         console.log(fetchedUsers);
-        if (fetchedUsers.data.users.length) {
-          setUsers(prevState => [...prevState, ...fetchedUsers.data.users]);
-          // setTotalHits(fetchedUsers.totalHits);
+        if (fetchedUsers.users.length) {
+          setUsers(prevState => [...prevState, ...fetchedUsers.users]);
+          setTotalPages(fetchedUsers.total_pages);
           setStatus('resolved');
         } else {
           setStatus('rejected');
-          setError(`Зображення по запиту не знайдено🙄`);
+          setError(`Користувачів по запиту не знайдено🙄`);
         }
       } catch (error) {
-        setError(
-          // status: 'rejected',
-          error.message
-        );
+        setError(error.message);
       }
     }
 
@@ -50,28 +44,11 @@ export const App = () => {
     return () => {
       abortCtrl.abort();
     };
-  }, []);
+  }, [page]);
 
   const loadMore = () => {
     setPage(prevState => prevState + 1);
   };
-
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       'https://frontend-test-assignment-api.abz.agency/api/v1/users'
-  //     );
-
-  //     setUsers(response.data.users);
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
 
   return (
     <>
@@ -79,22 +56,30 @@ export const App = () => {
       <main>
         <Hero />
         <Container>
-          {/* <Contacts users={users} loadMore={loadMore} /> */}
-          {
-            status === 'pending' && <div>Loading...</div>
-            // <Loader></Loader>
-          }
           {status === 'rejected' && <h1>{error}</h1>}
           {status === 'resolved' && users.length !== 0 && (
-            <Contacts users={users} loadMore={loadMore} />
+            <Contacts
+              users={users}
+              loadMore={loadMore}
+              status={status}
+              page={page}
+              totalPages={totalPages}
+            />
+          )}
+          {status === 'pending' && (
+            <ColorRing
+              visible={true}
+              height="48"
+              width="48"
+              ariaLabel="color-ring-loading"
+              wrapperStyle={{ display: 'block', margin: '0 auto' }}
+              wrapperClass="color-ring-wrapper"
+              colors={['#00BDD3', '#00BDD3', '#00BDD3', '#00BDD3', '#00BDD3']}
+            />
           )}
           <Form />
         </Container>
       </main>
-
-      {/* {status === 'resolved' && imgName !== null && totalHits > 12 && (
-          <Button onClick={loadMore}></Button>
-        )} */}
     </>
   );
 };

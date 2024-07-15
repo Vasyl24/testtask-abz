@@ -15,7 +15,10 @@ export const ContactTitle = styled.h2`
 `;
 
 export const ContactList = styled.ul`
-  margin-bottom: 50px;
+  margin-bottom: ${props =>
+    props.status === 'resolved' && props.page < props.totalPages
+      ? '0px'
+      : '50px'};
 
   @media screen and (min-width: 768px) {
     display: flex;
