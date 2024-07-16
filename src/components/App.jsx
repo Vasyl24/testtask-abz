@@ -2,7 +2,7 @@ import { Container } from './Container.styled';
 import Contacts from './Contacts/Contacts';
 import Header from './Header/Header';
 import Hero from './Hero/Hero';
-import Form from './Form/Form';
+import AddUserForm from './AddUserForm/AddUserForm';
 import { useEffect, useState } from 'react';
 import { fetchUsers } from './api';
 import { ColorRing } from 'react-loader-spinner';
@@ -77,7 +77,7 @@ export const App = () => {
               colors={['#00BDD3', '#00BDD3', '#00BDD3', '#00BDD3', '#00BDD3']}
             />
           )}
-          <Form />
+          <AddUserForm />
         </Container>
       </main>
     </>

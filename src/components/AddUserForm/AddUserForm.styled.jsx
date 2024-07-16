@@ -207,11 +207,17 @@ export const BtnSubmit = styled.button`
   width: 100px;
   height: 34px;
 
-  color: var(--secondary-text-color);
+  color: ${props => (props.disabled ? '#ffffff' : '#000000de')};
   font-size: 16px;
   font-weight: 400;
   line-height: calc(26 / 16);
 
-  background-color: var(--disabled-btn);
+  background-color: ${props => (props.disabled ? '#b4b4b4' : '#f4e041')};
   border-radius: 80px;
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+  transition: background-color 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75) 0s;
+
+  &:hover {
+    background-color: ${props => !props.disabled && '#ffe302'};
+  }
 `;
