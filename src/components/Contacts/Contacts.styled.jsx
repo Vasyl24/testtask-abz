@@ -75,12 +75,37 @@ export const ContactName = styled.p`
   text-align: center;
 `;
 
+export const Tooltip = styled.span`
+  position: absolute;
+  left: 80px;
+  top: 25px;
+  z-index: 1;
+
+  padding: 3px 16px;
+
+  color: var(--secondary-text-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: calc(26 / 16);
+  text-align: center;
+
+  border-radius: 4px;
+  background: var(--text-color);
+  visibility: hidden;
+`;
+
 export const ContactText = styled.p`
+  position: relative;
+
   color: var(--text-color);
   font-size: 16px;
   font-weight: 400;
   line-height: calc(26 / 16);
   text-align: center;
+
+  &:hover ${Tooltip} {
+    visibility: visible;
+  }
 `;
 
 export const ContactButton = styled.button`

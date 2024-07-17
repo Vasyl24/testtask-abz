@@ -1,3 +1,4 @@
+import { Field } from 'formik';
 import styled from 'styled-components';
 
 export const FormSection = styled.section`
@@ -15,7 +16,7 @@ export const FormTitle = styled.h2`
   line-height: calc (40/40);
 `;
 
-export const FormBlock = styled.form`
+export const FormBlock = styled.div`
   @media screen and (min-width: 768px) {
     width: 380px;
     margin-right: auto;
@@ -59,7 +60,8 @@ export const ContactLabel = styled.label`
   top: 14px;
   left: 16px;
 
-  color: var(--input-text-color);
+  color: ${props => props.color || '#7e7e7e'};
+
   font-size: 16px;
   font-weight: 400;
   line-height: calc(26 / 16);
@@ -69,7 +71,7 @@ export const ContactLabel = styled.label`
     font-size 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75) 0s;
 `;
 
-export const ContactInput = styled.input`
+export const ContactInput = styled(Field)`
   width: 100%;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -82,7 +84,7 @@ export const ContactInput = styled.input`
   line-height: calc(26 / 16);
 
   border-radius: 4px;
-  border: 1px solid var(--grey);
+  border: ${props => props.border || '1px solid #d0cfcf'};
   background-color: var(--background-color);
 
   & :focus > label {
@@ -220,4 +222,44 @@ export const BtnSubmit = styled.button`
   &:hover {
     background-color: ${props => !props.disabled && '#ffe302'};
   }
+`;
+
+export const Message = styled.div`
+  margin-top: 4px;
+  margin-left: 16px;
+
+  color: var(--error);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: calc(14 / 12);
+`;
+
+export const SuccessBlock = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 20px;
+
+  background-color: var(--background-color);
+  z-index: 10;
+`;
+
+export const SuccessText = styled.h2`
+  margin-bottom: 50px;
+
+  color: var(--text-color);
+  text-align: center;
+
+  font-size: 40px;
+  font-weight: 400;
+  line-height: calc(40 / 40);
+`;
+
+export const SuccessImg = styled.svg`
+  display: block;
+  margin: 0 auto;
+  width: 328px;
+  height: 290px;
 `;

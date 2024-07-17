@@ -7,6 +7,7 @@ import {
   ContactSection,
   ContactText,
   ContactTitle,
+  Tooltip,
 } from './Contacts.styled';
 
 const Contacts = ({ users, loadMore, status, page, totalPages }) => {
@@ -28,7 +29,10 @@ const Contacts = ({ users, loadMore, status, page, totalPages }) => {
             <ContactText>{user.position}</ContactText>
 
             {user.email.length > 37 ? (
-              <ContactText>{user.email.slice(0, 37) + '...'}</ContactText>
+              <ContactText style={{ cursor: 'pointer' }}>
+                {user.email.slice(0, 37) + '...'}{' '}
+                <Tooltip>{user.email}</Tooltip>
+              </ContactText>
             ) : (
               <ContactText>{user.email}</ContactText>
             )}

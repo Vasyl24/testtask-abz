@@ -25,7 +25,6 @@ export const App = () => {
 
         const fetchedUsers = await fetchUsers({ count, abortCtrl, page });
 
-        console.log(fetchedUsers);
         if (fetchedUsers.users.length) {
           setUsers(prevState => [...prevState, ...fetchedUsers.users]);
           setTotalPages(fetchedUsers.total_pages);
