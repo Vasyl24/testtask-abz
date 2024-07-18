@@ -4,7 +4,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  /* gap: 14px; */
   padding: 16px 13px;
 
   @media screen and (min-width: 768px) {
@@ -28,6 +28,10 @@ export const HeaderContainer = styled.header`
 export const Logo = styled.svg`
   width: 104px;
   height: 26px;
+
+  @media screen and (max-width: 359.98px) {
+    width: 74px;
+  }
 `;
 
 export const ButtonList = styled.ul`

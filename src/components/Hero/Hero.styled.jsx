@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import image from '../../assets/images/field.jpeg';
+import image from '../../assets/images/field.jpg';
 
 export const HeroSection = styled.section`
   margin: 0 auto;
@@ -14,7 +14,8 @@ export const HeroSection = styled.section`
     url(${image});
   background-color: var(--secondary-color);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 750px;
+  background-position: 0 -250px;
 
   text-align: center;
 
@@ -23,10 +24,15 @@ export const HeroSection = styled.section`
   }
 
   @media screen and (min-width: 1024px) {
-    width: 1170px;
     height: 650px;
+    background-size: auto 1000px;
+    background-position: 0 -350px;
 
     padding: 164px 16px 164px;
+  }
+
+  @media screen and (min-width: 1170px) {
+    width: 1170px;
   }
 `;
 
@@ -56,6 +62,10 @@ export const HeroText = styled.p`
   font-size: 16px;
   font-weight: 400;
   line-height: calc(26 / 16);
+
+  @media screen and (max-width: 359.98px) {
+    font-size: 14px;
+  }
 
   @media screen and (min-width: 768px) {
     width: 380px;
