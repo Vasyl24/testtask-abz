@@ -78,14 +78,12 @@ const AddUserForm = () => {
   };
 
   const onSubmit = async (values, { resetForm }) => {
-    console.log(values);
-    setSuccesImage(true);
-
-    setTimeout(() => {
-      setSuccesImage(false);
-    }, 5000);
-
     try {
+      setSuccesImage(true);
+      setTimeout(() => {
+        setSuccesImage(false);
+      }, 5000);
+
       const response = await axios.get(
         'https://frontend-test-assignment-api.abz.agency/api/v1/token'
       );
@@ -118,6 +116,9 @@ const AddUserForm = () => {
   const handleImgUpload = (evt, setFieldValue) => {
     if (evt.target.files.length > 0) {
       setFieldValue('photo', evt.target.files[0]);
+
+      const fileChosen = document.getElementById('file-chosen');
+      fileChosen.textContent = evt.target.files[0].name.slice(0, 27) + '...';
     }
   };
 
@@ -262,25 +263,22 @@ const AddUserForm = () => {
                   <ErrorMessage name="position_id" component={Message} />
                 </fieldset>
               </RadioList>
+
               <PhotoLabel htmlFor="file">
-                <span></span>
+                <div>
+                  <span className="upload">Upload</span>
+                  <span className="text" id="file-chosen">
+                    Upload your photo
+                  </span>
+                </div>
               </PhotoLabel>
               <PhotoInput
                 type="file"
                 name="photo"
                 id="file"
-                key={formik.values.photo ? formik.values.photo.name : 'default'}
                 accept="image/*"
                 onChange={evt => handleImgUpload(evt, formik.setFieldValue)}
               />
-              {/* <input
-                type="file"
-                name="photo"
-                id="file"
-                key={formik.values.photo ? formik.values.photo.name : 'default'}
-                accept="image/*"
-                onChange={evt => handleImgUpload(evt, formik.setFieldValue)}
-              /> */}
 
               <ErrorMessage name="photo" component={Message} />
 

@@ -167,14 +167,12 @@ export const PhotoLabel = styled.label`
   display: block;
   margin-bottom: 50px;
 
-  & span {
+  & div {
     display: flex;
   }
 
-  & span::before {
-    content: 'Upload';
+  & span.upload {
     display: inline-block;
-    width: 83px;
     padding: 14px 15px;
 
     color: var(--text-color);
@@ -188,8 +186,7 @@ export const PhotoLabel = styled.label`
     cursor: pointer;
   }
 
-  & span::after {
-    content: 'Upload your photo';
+  & span.text {
     display: inline-block;
     width: 100%;
     padding: 14px 16px;
