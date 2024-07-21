@@ -44,7 +44,7 @@ export const ContactInputItem = styled.li`
   }
 `;
 
-export const TelExample = styled.span`
+export const TelExample = styled.div`
   margin-top: 4px;
   margin-left: 16px;
 
